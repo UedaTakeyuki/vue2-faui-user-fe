@@ -1,0 +1,38 @@
+{
+  "name": "vue2-faui-user-fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/build-entry.js",
+  "files": [
+    "fbinit.js",
+    "fbinitCDN.js",
+    "initialize.js",
+    "initializeCDN.js",
+    "account.js",
+    "accountCDN.js",
+    "login.js",
+    "loginCDN.js",
+    "purchase.js",
+    "purchaseCDN.js",
+    "src/mixins/*",
+    "src/mixins.cdn/*",
+    "src/components/*",
+    "src/components.cdn/*",
+    "src/views/account/*",
+    "src/views.cdn/account/*",
+    "src/views/purchase/*",
+    "src/views.cdn/purchase/*",
+    "src/build-entry.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "keywords": [
+    "vue2",
+    "vuetify",
+    "firebaseauth"
+  ],
+  "author": "Dr. Takeyuki UEDA",
+  "license": "MIT"
+}
