@@ -1,1 +1,2 @@
 2022.10.08 created from vue-faui-user-fe2
+2022.10.11 add message props to DeleteAccount.vue which is under views.cdn
