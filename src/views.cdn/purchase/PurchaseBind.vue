@@ -101,7 +101,7 @@
 //import firebase from "firebase/app";
 //import "firebase/auth";
 import * as firebase from 'firebase'
-import axios from 'axios'
+// import axios from 'axios'
 // @ is an alias to /src
 import {loadStripe} from '@stripe/stripe-js';
 //const stripe = await loadStripe('pk_test_TqsPguNyJ9ezM50fWY5TVUvU');
@@ -139,8 +139,9 @@ export default {
       this.checkout(url)
     },
     checkout(url){
-      axios
-      .get(url)
+//      axios
+//      .get(url)
+      fetch(url)
       .then(response => {
         if (response.status == 200) {
           console.log("response = ", response)
@@ -153,8 +154,12 @@ export default {
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf(this.$server + '/v1/sessionIDforBind/%s', idToken)
-          axios
-          .post(url,this.lineitems)
+//          axios
+//          .post(url,this.lineitems)
+          fetch(url, {
+            method: "POST",
+            body: this.lineitems
+          })
           .then(response => {
             if (response.status == 200) {
               console.log("response = ", response)
@@ -169,8 +174,9 @@ export default {
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf(this.$server + '/v1/customerportal/%s', idToken)
-          axios
-          .get(url)
+//          axios
+//          .get(url)
+          fetch(url)
           .then(response => {
             if (response.status == 200) {
               console.log("response = ", response)
