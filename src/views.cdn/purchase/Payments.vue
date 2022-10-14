@@ -98,7 +98,7 @@ import DateString from '../../components/DateString'
 //import firebase from "firebase/app";
 //import "firebase/auth";
 import * as firebase from 'firebase'
-import axios from 'axios'
+// import axios from 'axios'
 // https://github.com/alexei/sprintf.js
 var sprintf = require('sprintf-js').sprintf,
     vsprintf = require('sprintf-js').vsprintf
@@ -136,8 +136,12 @@ export default {
           }
           this.progressLinear = true; // start progressLinear 
 
-          axios
-          .post(url,params)
+          //axios
+          //.post(url,params)
+          fetch(url, {
+            method: "POST",
+            body: params
+          })
           .then(response => {
             console.log("response:", response)
             console.log("params",params)
