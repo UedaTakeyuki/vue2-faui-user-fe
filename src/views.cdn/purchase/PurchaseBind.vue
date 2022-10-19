@@ -149,24 +149,21 @@ export default {
         }
       });
     },
-    purchase(){
+    async purchase(){
       var user = firebase.auth().currentUser;
       if (user) {
-        user.getIdToken(/* forceRefresh */ true).then((idToken) => {
-          const url = sprintf(this.$server + '/v1/sessionIDforBind/%s', idToken)
-//          axios
-//          .post(url,this.lineitems)
-          fetch(url, {
-            method: "POST",
-            body: this.lineitems
-          })
-          .then(response => {
-            if (response.status == 200) {
-              console.log("response = ", response)
-              this.stripe.redirectToCheckout({sessionId: response.data.SessionID})
-            }
-          });
-        });
+        const idToken = await user.getIdToken()
+        const url = sprintf('https://connect-srv.uedasoft.com/postforgetsessionid/%s', idToken)
+        const res = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify({PriceID: 'price_1KcLAqG8LX1Yc059OgCnZeyj', Quantity: 1})// this.lineitems
+        })
+        if (res.status == 200) {
+          const data = await res.json()
+          // https://stackoverflow.com/questions/56200562/how-to-fix-response-type-cors-when-trying-to-create-payment-through-paypal
+          console.log("data", data)
+          this.stripe.redirectToCheckout({sessionId: data.sessionID /*response.data.SessionID*/})
+        }
       }
     },
     cancel(){
