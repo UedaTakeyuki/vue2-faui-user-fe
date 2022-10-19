@@ -115,6 +115,13 @@ export default {
   name: 'purchaseBindj',
   components: {
   },
+  props:{
+    message: {
+      default: () => Vue.extend({template: '<v-card-text class="red--text">Once you delete this account, there is no going back. Please be certain.</v-card-text>'}),
+    },
+    URLofSessionID: String,
+  },
+
   data(){
     return {
       // v-select
@@ -153,7 +160,7 @@ export default {
       var user = firebase.auth().currentUser;
       if (user) {
         const idToken = await user.getIdToken()
-        const url = sprintf('https://connect-srv.uedasoft.com/postforgetsessionid/%s', idToken)
+        const url = sprintf(this.URLofSessionID, idToken)
         const res = await fetch(url, {
           method: "POST",
           body: JSON.stringify({PriceID: 'price_1KcLAqG8LX1Yc059OgCnZeyj', Quantity: 1})// this.lineitems
