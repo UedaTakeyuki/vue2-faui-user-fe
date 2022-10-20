@@ -163,7 +163,10 @@ export default {
         const url = sprintf(this.URLofSessionID, idToken)
         const res = await fetch(url, {
           method: "POST",
-          body: JSON.stringify({PriceID: 'price_1KcLAqG8LX1Yc059OgCnZeyj', Quantity: 1})// this.lineitems
+          body: JSON.stringify({
+            priceQuantityArray: [{PriceID: 'price_1KcLAqG8LX1Yc059OgCnZeyj', Quantity: 1}],
+            //params: {}
+          })
         })
         if (res.status == 200) {
           const data = await res.json()
