@@ -20,7 +20,7 @@
 
       <v-card-title>Price ID & Quantity</v-card-title>
       <v-card-text>
-        <v-container v-for="priceQuantity in priceQuantityArray">
+        <v-container v-for="(priceQuantity, index) in priceQuantityArray" :key="index">
           <v-row>
             <v-col>
               <v-text-field
@@ -37,10 +37,18 @@
               ></v-text-field>
             </v-col>
             <v-col cols="1">
-              <v-btn>add</v-btn>
+              <v-btn
+                @click="addPriceQuantity"
+              >
+                add
+              </v-btn>
             </v-col>
             <v-col cols="1">
-              <v-btn>del</v-btn>
+              <v-btn
+                @click="delPriceQuantity(index)"
+              >
+                del
+              </v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -125,6 +133,12 @@ export default {
           });
         });
       }
+    },
+    addPriceQuantity(){
+      this.priceQuantityArray.push({price:"", quantity: 0})
+    },
+    delPriceQuantity(index){
+      this.priceQuantityArray.splice(index, 1)
     },
   },
   async mounted() {
