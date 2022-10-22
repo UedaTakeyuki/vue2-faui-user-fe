@@ -20,40 +20,11 @@
 
       <v-card-title>Price ID & Quantity</v-card-title>
       <v-card-text>
-        <v-container v-for="(priceQuantity, index) in priceQuantityArray" :key="index">
-          <v-row>
-            <v-col>
-              <v-text-field
-                v-model="priceQuantity.price"
-                hint='Price ID of your Stripe project starting with which is "price_"'
-                label="Price ID"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="2">
-              <v-text-field
-                v-model.number="priceQuantity.quantity"
-                hint='Quantity to buy'
-                label="Quantity"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="1">
-              <v-btn
-                @click="addPriceQuantity"
-              >
-                add
-              </v-btn>
-            </v-col>
-            <v-col cols="1">
-              <v-btn
-                @click="delPriceQuantity(index)"
-              >
-                del
-              </v-btn>
-            </v-col>
-          </v-row>
-        </v-container>
-
+        <PriceQuantity
+          :priceQuantityArray="priceQuantityArray"
+        />
       </v-card-text>
+
       <v-card-actions>
           <v-btn
             color="primary"
@@ -79,6 +50,7 @@
 /* eslint no-unused-vars: 0 */
 //import firebase from "firebase/app";
 //import "firebase/auth";
+import PriceQuantity from './components/PriceQuantity'
 import * as firebase from 'firebase'
 import {loadStripe} from '@stripe/stripe-js';
 var sprintf = require('sprintf-js').sprintf,
@@ -86,6 +58,7 @@ var sprintf = require('sprintf-js').sprintf,
 
 export default {
   components: {
+    PriceQuantity
   },
   props:{
     message: {
@@ -133,12 +106,6 @@ export default {
           });
         });
       }
-    },
-    addPriceQuantity(){
-      this.priceQuantityArray.push({price:"", quantity: 0})
-    },
-    delPriceQuantity(index){
-      this.priceQuantityArray.splice(index, 1)
     },
   },
   async mounted() {
