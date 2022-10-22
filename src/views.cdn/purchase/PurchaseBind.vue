@@ -97,15 +97,7 @@ export default {
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf('https://connect-srv.uedasoft.com/customerportal/%s', idToken)
-          fetch(url)
-/*
-          .then(response => {
-            if (response.status == 200) {
-              console.log("response = ", response)
-              this.stripe.redirectToCheckout({sessionId: response.data.SessionID})
-            }
-          });
-*/
+          location.href = url
         });
       }
     },
