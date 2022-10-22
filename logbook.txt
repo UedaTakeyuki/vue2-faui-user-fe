@@ -1,3 +1,5 @@
 2022.10.08 created from vue-faui-user-fe2
 2022.10.11 add message props to DeleteAccount.vue which is under views.cdn
 2022.10.14 remove axios from purchase
+
+2022.10.22 add src/views.cdn/purchase/components/*"
