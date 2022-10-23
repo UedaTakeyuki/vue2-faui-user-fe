@@ -3,3 +3,4 @@
 2022.10.14 remove axios from purchase
 
 2022.10.22 add src/views.cdn/purchase/components/*"
+2022.10.23 makePurchaseSessionRequest()
