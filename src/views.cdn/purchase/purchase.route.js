@@ -1,3 +1,4 @@
+import Buy from './Buy.vue'
 import PurchaseFront from './PurchaseFront.vue'
 import PurchaseBind from './PurchaseBind.vue'
 import PurchaseSucceeded from './PurchaseSucceeded.vue'
@@ -9,6 +10,11 @@ export default {
       path: '/purchase',
       name: 'purchase',
       component: PurchaseFront
+    },
+    {
+      path: '/buy',
+      name: 'buy',
+      component: Buy
     },
     {
       path: '/purchaseBind',
