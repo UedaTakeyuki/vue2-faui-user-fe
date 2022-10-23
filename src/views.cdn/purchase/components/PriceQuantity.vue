@@ -41,7 +41,7 @@
     <v-container v-for="(priceQuantity, index) in priceQuantityArray" :key="index">
       <v-row>
         <v-col>
-          {{priceQuantity.price}}
+          {{priceQuantity.priceID}}
         </v-col>
         <v-col cols="2">
           {{priceQuantity.quantity}}
@@ -96,7 +96,7 @@ export default {
   },
   methods: {
     addPriceQuantity(){
-      this.priceQuantityArray.push({price: this.adding.price, quantity: this.adding.quantity})
+      this.priceQuantityArray.push({priceID: this.adding.price, quantity: this.adding.quantity})
     },
     delPriceQuantity(index){
       this.priceQuantityArray.splice(index, 1)

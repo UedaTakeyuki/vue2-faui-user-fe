@@ -79,10 +79,13 @@ export default {
         const url = sprintf(this.URLofSessionID, idToken)
         const res = await fetch(url, {
           method: "POST",
+          body: this.makePurchaseSessionRequest(),
+/*
           body: JSON.stringify({
             priceQuantityArray: [{PriceID: 'price_1KcLAqG8LX1Yc059OgCnZeyj', Quantity: 1}],
             //params: {}
           })
+*/
         })
         if (res.status == 200) {
           const data = await res.json()
@@ -101,6 +104,12 @@ export default {
         });
       }
     },
+    makePurchaseSessionRequest(){
+      return JSON.stringify({
+            priceQuantityArray: this.priceQuantityArray,
+            //params: {}
+          })
+    }
   },
   async mounted() {
     this.stripe = await loadStripe(this.$stripe);
