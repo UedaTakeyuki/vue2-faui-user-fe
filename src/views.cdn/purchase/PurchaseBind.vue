@@ -68,7 +68,7 @@ export default {
   },
   data(){
     return {
-      priceQuantityArray: [{price:"", quantity: 0}],
+      priceQuantityArray: [],
     }
   },
   methods: {
