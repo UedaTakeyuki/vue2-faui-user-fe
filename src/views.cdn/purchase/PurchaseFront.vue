@@ -28,7 +28,8 @@ export default {
   data: function () {
     return {
       links: [
-        { icon: '', text: 'Buy new Bind', route: '/purchaseBind'},
+//        { icon: '', text: 'Buy new Bind', route: '/purchaseBind'},
+        { icon: '', text: 'Buy', route: '/buy'},
         { icon: '', text: 'Purchase history', route: '/payments'},
       ]
     }
