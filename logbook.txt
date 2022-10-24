@@ -4,3 +4,4 @@
 
 2022.10.22 add src/views.cdn/purchase/components/*"
 2022.10.23 makePurchaseSessionRequest(), Buy
+2022.10.24 add props mainView
