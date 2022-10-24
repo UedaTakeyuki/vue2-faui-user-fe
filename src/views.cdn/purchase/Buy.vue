@@ -1,6 +1,7 @@
 <template>
   <div
     :is="mainView"
+    :URLofSessionID="this.baseURL + '/postforgetsessionid/%s' "
   />
 </template>
 
@@ -13,7 +14,8 @@ export default {
   props:{
     mainView: {
       default: () => PurchaseBind,
-    }
+    },
+    baseURL: String,
   },
 }
 </script>
