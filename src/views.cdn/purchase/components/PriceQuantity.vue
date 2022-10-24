@@ -2,7 +2,7 @@
   <div>
     <v-form v-model="adding.valid">
       <v-card flat>
-        <v-card-title>imput</v-card-title>
+        <v-card-title>input</v-card-title>
         <v-card-text>
         <v-container>
         <v-row>
