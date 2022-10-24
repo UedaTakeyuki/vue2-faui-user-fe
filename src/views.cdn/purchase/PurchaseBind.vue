@@ -1,6 +1,8 @@
 <template>
   <div class="purchaseBind">
     {{priceQuantityArray}}
+    {{metaDataArray}}
+    {{URLofSessionID}}
     <v-card>
       <v-card-title>
         Purchase view example
@@ -22,6 +24,13 @@
       <v-card-text>
         <PriceQuantity
           :priceQuantityArray="priceQuantityArray"
+        />
+      </v-card-text>
+
+      <v-card-title>MetaData</v-card-title>
+      <v-card-text>
+        <MetaData
+          :metaDataArray="metaDataArray"
         />
       </v-card-text>
 
@@ -51,6 +60,7 @@
 //import firebase from "firebase/app";
 //import "firebase/auth";
 import PriceQuantity from './components/PriceQuantity'
+import MetaData from './components/MetaData'
 import * as firebase from 'firebase'
 import {loadStripe} from '@stripe/stripe-js';
 var sprintf = require('sprintf-js').sprintf,
@@ -58,7 +68,8 @@ var sprintf = require('sprintf-js').sprintf,
 
 export default {
   components: {
-    PriceQuantity
+    PriceQuantity,
+    MetaData
   },
   props:{
     message: {
@@ -69,6 +80,7 @@ export default {
   data(){
     return {
       priceQuantityArray: [],
+      metaDataArray:{},
     }
   },
   methods: {
@@ -107,6 +119,7 @@ export default {
     makePurchaseSessionRequest(){
       return JSON.stringify({
             priceQuantityArray: this.priceQuantityArray,
+            params: this.metaDataArray,
             //params: {}
           })
     }
