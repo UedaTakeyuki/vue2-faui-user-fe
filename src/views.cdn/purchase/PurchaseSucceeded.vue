@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import {loadStripe} from '@stripe/stripe-js';
+//import {loadStripe} from '@stripe/stripe-js';
 export default {
   data: function () {
     return {
@@ -21,10 +21,5 @@ export default {
       session: "",
     }
   },
-  async mounted() {
-    this.stripe = await loadStripe('pk_test_TqsPguNyJ9ezM50fWY5TVUvU');
-//   this.session = await this.stripe.checkout.sessions.retrieve(this.$route.params.sessionID);
-  },
-
 }
 </script>

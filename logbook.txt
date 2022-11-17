@@ -7,3 +7,5 @@
 2022.10.24 add props mainView, MetaData.vue
 
 2022.10.28 fix Payments.vue
+
+2022.11.17 remove stripe loadStripe
