@@ -14,8 +14,8 @@
 //import firebase from "firebase";
 //import firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
-import firebase from "firebase/app";
-import "firebase/auth";
+//import firebase from "firebase/app";
+//import "firebase/auth";
 import * as firebaseui from 'firebaseui';
 import EmailVerificationRequest from './EmailVerificationRequest.vue'
 
@@ -23,7 +23,6 @@ import EmailVerificationRequest from './EmailVerificationRequest.vue'
 //import axios from 'axios';
 
 export default {
-//  props: ['firebase'],
   components: {
     EmailVerificationRequest
   },
@@ -42,8 +41,8 @@ export default {
     },
   },
   mounted() {
-    console.log("login firebase:", this.firebase)
-    firebase.auth().onAuthStateChanged((user) => {
+    console.log("login firebase:", this.$firebase)
+    this.$firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // set user globals
         this.$isLogin = true;
@@ -74,8 +73,8 @@ export default {
               // User successfully signed in.
               // Return type determines whether we continue the redirect automatically
               // or whether we leave that to developer to handle.
-              if (!firebase.auth().currentUser.emailVerified){
-                firebase.auth().currentUser.sendEmailVerification(actionCodeSettings);
+              if (!this.$firebase.auth().currentUser.emailVerified){
+                this.$firebase.auth().currentUser.sendEmailVerification(actionCodeSettings);
                 return false;
               }
               return true;
@@ -86,7 +85,7 @@ export default {
             }
           },
           signInSuccessUrl: "/",
-          signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID, 
+          signInOptions: [this.$firebase.auth.EmailAuthProvider.PROVIDER_ID, 
                           /* firebase.auth.FacebookAuthProvider.PROVIDER_ID */
                         ],
     //      signInOptions: [this.firebase.auth.EmailAuthProvider.PROVIDER_ID],
@@ -102,7 +101,7 @@ export default {
         }
         console.log("uiConfig", uiConfig)
         if (!ui) {
-          ui = new firebaseui.auth.AuthUI(firebase.auth());
+          ui = new firebaseui.auth.AuthUI(this.$firebase.auth());
           ui.start("#firebaseui-auth-container", uiConfig);
         }
       }

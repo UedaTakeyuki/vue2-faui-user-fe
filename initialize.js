@@ -52,6 +52,10 @@ export default {
       data: { 
         $isLogin: false,
         $isEmailVerified: false,
+        $displayName: "",
+        $user_email: "",
+        $user_id: "",
+        $firebase: firebase,
 /*
         $server: process.env.VUE_APP_serverProtocol + "://" 
                  + process.env.VUE_APP_serverHost +"."
@@ -80,6 +84,10 @@ export default {
         get: function () { return globalData.$data.$user_id },
         set: function (newUser_id) { globalData.$data.$user_id = newUser_id; }
       },
+      $firebase: {
+        get: function () { return globalData.$data.$firebase },
+        set: function (newFirebase) { globalData.$data.$firebase = newFirebase; }
+      },
 /*
       $server: {
         get: function () { return globalData.$data.$server },
@@ -107,5 +115,6 @@ export default {
   },
   fbinit: () => {
     firebase.initializeApp(firebaseConfig);
+    this.$firebase = firebase
   }
 }

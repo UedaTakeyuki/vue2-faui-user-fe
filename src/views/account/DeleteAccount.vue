@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import firebase from "firebase/app";
-import "firebase/auth";
+//import firebase from "firebase/app";
+//import "firebase/auth";
 
 export default {
   data: function () {
@@ -57,10 +57,10 @@ export default {
         /* eslint-disable no-unused-vars */
         console.log("this", this)
         // for $parent, refer https://johobase.com/vue-js-parent-refs-root/
-        firebase.auth().currentUser.delete().catch((error) => {
+        this.$firebase.auth().currentUser.delete().catch((error) => {
           if (error.code == 'auth/requires-recent-login') {
             // The user's credential is too old. She needs to sign in again.
-            firebase.auth().signOut().then(function() {
+            this.$firebase.auth().signOut().then(function() {
               // The timeout allows the message to be displayed after the UI has
               // changed to the signed out state.
               setTimeout(function() {

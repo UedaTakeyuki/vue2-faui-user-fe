@@ -9,3 +9,5 @@
 2022.10.28 fix Payments.vue
 
 2022.11.17 remove stripe loadStripe
+
+2022.12.15 v2 start
