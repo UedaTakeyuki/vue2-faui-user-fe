@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import Vue from 'vue'
 
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_apiKey,
