@@ -29,7 +29,7 @@
           <v-list-item
             v-for="payment in payments"
             :key="payment.ID"
-            @click="aho(bind)"
+            @click="aho()"
           >
             <v-list-item-content>
               <v-expansion-panels>
@@ -97,7 +97,8 @@
 import DateString from '../../components/DateString'
 //import firebase from "firebase/app";
 //import "firebase/auth";
-import axios from 'axios'
+//import * as firebase from 'firebase'
+// import axios from 'axios'
 // https://github.com/alexei/sprintf.js
 var sprintf = require('sprintf-js').sprintf,
     vsprintf = require('sprintf-js').vsprintf
@@ -120,47 +121,43 @@ export default {
     }
   },
   methods: {
-    getPayments(startingAfter, endingBefore){
+    async getPayments(startingAfter, endingBefore){
       var user = this.$firebase.auth().currentUser;
       if (user) {
-        user.getIdToken(/* forceRefresh */ true).then((idToken) => {
-          var url
-          var params = new URLSearchParams();
-          url = sprintf(this.$server + '/v1/paymenthistorys/%s/%s', this.limit, idToken)
-          if (startingAfter != ""){
-            params.append('startingAfter', startingAfter);
-          }
-          if (endingBefore != ""){
-            params.append('endingBefore', endingBefore);
-          }
-          this.progressLinear = true; // start progressLinear 
+        const idToken = await user.getIdToken()
+        var params = new URLSearchParams();
+        const url = sprintf(this.$server + '/paymenthistorys/%s/%s', this.limit, idToken)
+        if (startingAfter != ""){
+          params.append('startingAfter', startingAfter);
+        }
+        if (endingBefore != ""){
+          params.append('endingBefore', endingBefore);
+        }
+        this.progressLinear = true; // start progressLinear 
 
-          axios
-          .post(url,params)
-          .then(response => {
-            console.log("response:", response)
-            console.log("params",params)
-            if (response.status == 200) {
-              this.payments = response.data.payments
-              this.tobecontinued = response.data.tobecontinued
-              this.latestStartingAfter = response.data.startingAfter
-              this.latestEndingBefore = response.data.endingBefore
-
-              // first get
-//              if (params.startingAfter == "" && params.endingBefore == ""){
-              if (response.data.latestPayments && this.payments.length != 0){
-                this.latestPaymentID = this.payments[0].ID
-              }
-
-              // stop progress_linear
-              this.progressLinear = false; // stop progressLinear
-            }
-          });
+        //axios
+        //.post(url,params)
+        const res = await fetch(url, {
+          method: "POST",
+          body: params
         })
+        if (res.status == 200){
+          const data = await res.json()
+          this.payments = data.payments
+          this.tobecontinued = data.tobecontinued
+          this.latestStartingAfter = data.startingAfter
+          this.latestEndingBefore = data.endingBefore
+
+          // first get
+//              if (params.startingAfter == "" && params.endingBefore == ""){
+          if (data.latestPayments && this.payments.length != 0){
+            this.latestPaymentID = this.payments[0].ID
+          }
+
+          // stop progress_linear
+          this.progressLinear = false; // stop progressLinear
+        }
       }
-    },
-    aho(){
-      console.log("aho")
     },
     /*
     toDateString(unixtime){

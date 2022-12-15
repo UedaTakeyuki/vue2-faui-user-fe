@@ -57,11 +57,11 @@
 
 <script>
 /* eslint no-unused-vars: 0 */
-import firebase from "firebase/app";
-import "firebase/auth";
+//import firebase from "firebase/app";
+//import "firebase/auth";
 import PriceQuantity from './components/PriceQuantity'
 import MetaData from './components/MetaData'
-import * as firebase from 'firebase'
+//import * as firebase from 'firebase'
 import {loadStripe} from '@stripe/stripe-js';
 var sprintf = require('sprintf-js').sprintf,
     vsprintf = require('sprintf-js').vsprintf
@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     async purchase(){
-      var user = firebase.auth().currentUser;
+      var user = this.$firebase.auth().currentUser;
       if (user) {
         const idToken = await user.getIdToken()
         const url = sprintf(this.URLofSessionID, idToken)
@@ -108,7 +108,7 @@ export default {
       }
     },
     cancel(){
-      var user = firebase.auth().currentUser;
+      var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf('https://connect-srv.uedasoft.com/customerportal/%s', idToken)
