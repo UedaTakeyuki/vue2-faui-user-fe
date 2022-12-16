@@ -50,7 +50,10 @@ export default {
     };
     return computed
   },
-  accountinit: () => {
+  accountinit: (fbinit = true) => {
+    if (fbinit){
+      firebase.initializeApp(firebaseConfig);
+    }
     let globalData = new Vue({
       data: { 
         $isLogin: false,
