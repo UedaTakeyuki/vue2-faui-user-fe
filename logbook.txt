@@ -11,3 +11,6 @@
 2022.11.17 remove stripe loadStripe
 
 2022.12.15 v2 start
+2022.12.16 confirmed by for-cdn-firebase@8.10.0-and-firebaseui@5.0.0
+           confirmed by for-npm-firebase@8.10.0-and-firebaseui@5.0.0
+           move view.cdn to old and remover from build-entry.js

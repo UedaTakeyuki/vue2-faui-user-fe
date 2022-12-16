@@ -1,11 +1,11 @@
 import AccountFront    from './views/account/AccountFront.vue';
-import AccountFrontCDN from './views.cdn/account/AccountFront.vue';
+//import AccountFrontCDN from './views.cdn/account/AccountFront.vue';
 import PurchaseFront   from './views/purchase/PurchaseFront.vue';
-import PurchaseFrontCDN from './views.cdn/purchase/PurchaseFront.vue';
+//import PurchaseFrontCDN from './views.cdn/purchase/PurchaseFront.vue';
 import AccountRoutes    from './views/account/account.route.js'
-import AccountRoutesCDN from './views.cdn/account/account.route.js'
+//import AccountRoutesCDN from './views.cdn/account/account.route.js'
 import PurchaseRoutes    from './views/purchase/purchase.route.js'
-import PurchaseRoutesCDN from './views.cdn/purchase/purchase.route.js'
+//import PurchaseRoutesCDN from './views.cdn/purchase/purchase.route.js'
 import Login    from './components/Login.vue'
 import LoginCDN from './components.cdn/Login.vue'
 import EmailVerificationRequest    from './components/EmailVerificationRequest.vue'
@@ -16,13 +16,13 @@ import IdTokenCDN from './mixins.cdn/IdToken.js'
 // Named export
 export {
 	AccountFront,
-	AccountFrontCDN,
+//	AccountFrontCDN,
 	AccountRoutes,
-	AccountRoutesCDN,
+//	AccountRoutesCDN,
 	PurchaseFront,
-	PurchaseFrontCDN,
+//	PurchaseFrontCDN,
 	PurchaseRoutes,
-	PurchaseRoutesCDN,
+//	PurchaseRoutesCDN,
 	Login,
 	LoginCDN,
 	EmailVerificationRequest,
@@ -34,13 +34,13 @@ export {
 // Default export
 export default {
 	AccountFront,
-	AccountFrontCDN,
+//	AccountFrontCDN,
 	AccountFront,
-	AccountFrontCDN,
+//	AccountFrontCDN,
 	PurchaseFront,
-	PurchaseFrontCDN,
+//	PurchaseFrontCDN,
 	PurchaseRoutes,
-	PurchaseRoutesCDN,
+//	PurchaseRoutesCDN,
 	Login,
 	LoginCDN,
 	EmailVerificationRequest,
