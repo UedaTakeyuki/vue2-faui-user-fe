@@ -15,3 +15,6 @@
            confirmed by for-npm-firebase@8.10.0-and-firebaseui@5.0.0
            move view.cdn to old and remover from build-entry.js
            initialize.account include fbinit
+2022.12.21 move cdn version to old folder
+
+2023.01.20 2.0.13 revive components.cdn

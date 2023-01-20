@@ -100,7 +100,10 @@ export default {
     };
     return computed
   },
-  purchaseinit: () => {
+  purchaseinit: (fbinit = true) => {
+    if (fbinit){
+      firebase.initializeApp(firebaseConfig);
+    }
     let globalData = new Vue({
       data: { 
         $stripe: process.env.VUE_APP_stripeEnv == "live" ? process.env.VUE_APP_stripeapiLiveKey : process.env.VUE_APP_stripeapiTestKey,

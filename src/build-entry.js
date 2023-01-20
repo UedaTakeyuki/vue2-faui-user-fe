@@ -11,7 +11,7 @@ import LoginCDN from './components.cdn/Login.vue'
 import EmailVerificationRequest    from './components/EmailVerificationRequest.vue'
 import EmailVerificationRequestCDN from './components.cdn/EmailVerificationRequest.vue'
 import IdToken from './mixins/IdToken.js'
-import IdTokenCDN from './mixins.cdn/IdToken.js'
+//import IdTokenCDN from './mixins.cdn/IdToken.js'
 
 // Named export
 export {
