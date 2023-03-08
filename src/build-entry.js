@@ -11,6 +11,7 @@ import LoginCDN from './components.cdn/Login.vue'
 import EmailVerificationRequest    from './components/EmailVerificationRequest.vue'
 import EmailVerificationRequestCDN from './components.cdn/EmailVerificationRequest.vue'
 import IdToken from './mixins/IdToken.js'
+import initialize from '../initialize.js'
 //import IdTokenCDN from './mixins.cdn/IdToken.js'
 
 // Named export
@@ -28,14 +29,15 @@ export {
 	EmailVerificationRequest,
 	EmailVerificationRequestCDN,
 	IdToken,
-	IdTokenCDN,
+	initialize,
+//	IdTokenCDN,
 };
 
 // Default export
 export default {
 	AccountFront,
 //	AccountFrontCDN,
-	AccountFront,
+	AccountRoutes,
 //	AccountFrontCDN,
 	PurchaseFront,
 //	PurchaseFrontCDN,
@@ -44,5 +46,6 @@ export default {
 	Login,
 	LoginCDN,
 	EmailVerificationRequest,
-	EmailVerificationRequestCDN
+	EmailVerificationRequestCDN,
+	initialize
 };
