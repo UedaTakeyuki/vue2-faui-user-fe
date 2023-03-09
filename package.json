@@ -1,15 +1,13 @@
 {
   "name": "vue2-faui-user-fe",
-  "version": "2.0.16",
+  "version": "2.0.17",
   "description": "",
   "main": "src/build-entry.js",
   "files": [
     "fbinit.js",
     "initialize.js",
     "account.js",
-    "accountCDN.js",
     "login.js",
-    "purchase.js",
     "src/mixins/*",
     "src/components/*",
     "src/views/account/*",
