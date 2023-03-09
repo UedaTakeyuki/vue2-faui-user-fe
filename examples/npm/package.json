@@ -10,6 +10,8 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.48.0",
     "core-js": "^3.6.5",
+    "firebase": "8",
+    "firebaseui": "5",
     "stripe": "^11.13.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

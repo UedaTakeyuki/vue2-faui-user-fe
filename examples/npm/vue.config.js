@@ -16,10 +16,10 @@ module.exports = {
 //      'vuetify/lib': 'Vuetify',
 //      'qrcode-of-this-site2':'QRcode',
 //      firebase: 'firebase',
-      'firebase/app': 'firebase',
+//      'firebase/app': 'firebase',
 //      'firebase/auth': 'firebase',
-      firebaseui: 'firebaseui',
-      'firebaseui/dist/firebaseui.css': 'firebaseui.css',
+//      firebaseui: 'firebaseui',
+//      'firebaseui/dist/firebaseui.css': 'firebaseui.css',
     })
   },
 
