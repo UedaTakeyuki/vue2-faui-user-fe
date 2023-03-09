@@ -1,25 +1,18 @@
 {
   "name": "vue2-faui-user-fe",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "description": "",
   "main": "src/build-entry.js",
   "files": [
     "fbinit.js",
-    "fbinitCDN.js",
     "initialize.js",
-    "initializeCDN.js",
     "account.js",
     "accountCDN.js",
     "login.js",
-    "loginCDN.js",
     "purchase.js",
-    "purchaseCDN.js",
     "src/mixins/*",
-    "src/mixins.cdn/*",
     "src/components/*",
-    "src/components.cdn/*",
     "src/views/account/*",
-    "src/views/purchase/*",
     "src/build-entry.js"
   ],
   "scripts": {
