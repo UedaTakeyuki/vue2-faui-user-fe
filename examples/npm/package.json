@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "npm",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,27 +10,19 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.48.0",
     "core-js": "^3.6.5",
-    "firebase": "8",
-    "firebaseui": "5",
+    "stripe": "^11.13.0",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuetify": "^2.6.0",
-    "vuetify-nav2": "^1.0.6"
+    "vue2-faui-user-fe": "^2.0.17"
   },
   "devDependencies": {
     "@mdi/js": "^7.1.96",
     "@vue/cli-plugin-babel": "~4.5.19",
     "@vue/cli-plugin-eslint": "~4.5.19",
-    "@vue/cli-plugin-router": "~4.5.19",
     "@vue/cli-service": "~4.5.19",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "sass": "~1.32.0",
-    "sass-loader": "^10.0.0",
-    "vue-cli-plugin-vuetify": "~2.5.8",
-    "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.7.0"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

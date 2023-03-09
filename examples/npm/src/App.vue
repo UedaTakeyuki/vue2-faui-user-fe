@@ -14,8 +14,8 @@
 
 <script>
 /* eslint-disable */
-import {AccountRoutes as AccountRoutes} from '../../src/build-entry'    // If firebase is from npm or yarn
-import {Login as Login} from '../../src/build-entry'
+import {AccountRoutes as AccountRoutes} from 'vue2-faui-user-fe'    // If firebase is from npm or yarn
+import {Login as Login} from 'vue2-faui-user-fe'
 import {Navbar} from 'vuetify-nav2'
 import {mdiHome, mdiAccount} from "@mdi/js"
 

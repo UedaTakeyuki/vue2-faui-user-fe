@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    
+
     <!-- For firebase -->
     <!-- Added for firebase-->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -16,6 +16,21 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" />
     <link href="https://cdn.jsdelivr.net/npm/firebaseui@6.0.2/dist/firebaseui.min.css" rel="stylesheet">
 
+        <!--vuetify-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3/dist/vue-router.min.js"></script>
+
+    <!-- core-js-bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js"></script>
+
+    <!--vuetify-nav-->
+    <script src="https://cdn.jsdelivr.net/npm/vuetify-nav2@1.0.6/dist/VuetifyNav2.umd.js"></script>
+
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>
     <noscript>
