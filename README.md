@@ -1,4 +1,15 @@
-  # Vue Firebase auth ui user management frontend pack
+# A supplement to the FirebaseUI for the Vuetify2 apps.
+This package is a supplement UI's to the [FirebaseUI-web](https://github.com/firebase/firebaseui-web) for the Vuetify2 app. This package add following UI components:
+
+- Login UI if not logged in.
+- Logout.
+- Email Verification request.
+- Change Email address.
+- Change password.
+- Delete account
+
+Also this pacage is designed to fit the [vuetify-nav2](https://github.com/UedaTakeyuki/vuetify-nav2) which is an Out-of-the-box Vuetify navigation menu component.
+
 Provide following feature to your vue app.
 - Sign Up / Sign In by firebase auth ui with email with verification request(original of this package).
 - Account Management (cange name and email address, delete account, etc).
