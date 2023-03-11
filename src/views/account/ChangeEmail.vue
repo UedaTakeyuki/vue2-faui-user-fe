@@ -35,7 +35,10 @@
         color="primary"
         @click="update_email"
       >
-        <v-icon>done</v-icon>
+        <!--<v-icon>done</v-icon>-->
+        <SvgIconDone
+          style="width: 70%; height: 70%;"
+        />
       </v-btn>
 
     </v-card-actions>
@@ -48,9 +51,11 @@
 
 import Logout from "./Logout"
 import User from "./User"
+import SvgIconDone from '../../components/SvgIconDone.vue'
 
 export default {
   mixins: [Logout, User],
+  components: {SvgIconDone},
   data: function () {
     return {
       user: null,

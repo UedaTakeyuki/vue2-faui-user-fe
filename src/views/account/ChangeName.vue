@@ -34,7 +34,10 @@
         color="primary"
         @click="update_displayname"
       >
-        <v-icon>done</v-icon>
+        <!--<v-icon>done</v-icon>-->
+        <SvgIconDone
+          style="width: 70%; height: 70%;"
+        />
       </v-btn>
 
     </v-card-actions>
@@ -46,8 +49,10 @@
 // https://qiita.com/saio-th/items/111f6f5cc62f421cf045
 
 import User from "./User"
+import SvgIconDone from '../../components/SvgIconDone.vue'
 
 export default {
+  components: {SvgIconDone},
   mixins: [User],
   data: function () {
     return {

@@ -23,7 +23,10 @@
         color="primary"
         @click="logout"
       >
-        <v-icon>exit_to_app</v-icon>
+        <!--<v-icon>exit_to_app</v-icon>-->
+        <SvgIconRoundExitToApp
+          style="width: 70%; height: 70%;"
+        />
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -31,8 +34,10 @@
 
 <script>
 import Logout from "./Logout"
+import SvgIconRoundExitToApp from '../../components/SvgIconRoundExitToApp.vue'
 
 export default {
+  components: {SvgIconRoundExitToApp},
   mixins: [Logout],
 }
 </script>

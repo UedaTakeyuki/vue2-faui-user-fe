@@ -37,7 +37,10 @@
         color="primary"
         @click="update_password"
       >
-        <v-icon>done</v-icon>
+        <!--<v-icon>done</v-icon>-->
+        <SvgIconDone
+          style="width: 70%; height: 70%;"
+        />
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -51,8 +54,10 @@
 //import "firebase/auth";
 import Logout from "./Logout"
 import User from "./User"
+import SvgIconDone from '../../components/SvgIconDone.vue'
 
 export default {
+  components: {SvgIconDone},
   mixins: [Logout, User],
   data: function () {
     return {
