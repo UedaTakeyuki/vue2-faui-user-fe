@@ -84,7 +84,7 @@ export default {
               // Hide the loader.
             }
           },
-          signInSuccessUrl: "/",
+          signInSuccessUrl: location.href,
           signInOptions: [this.$firebase.auth.EmailAuthProvider.PROVIDER_ID, 
                           /* firebase.auth.FacebookAuthProvider.PROVIDER_ID */
                         ],
