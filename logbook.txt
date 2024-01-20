@@ -22,3 +22,5 @@
 2023.03.08 add test
 
 2024.01.10 Return to original url
+
+2024.01.20 return back to the page if logout

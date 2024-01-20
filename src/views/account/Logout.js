@@ -12,7 +12,8 @@ export default{
     logout_soon: function() {
       this.$firebase.auth().signOut().then(function() {
         // Sign-out successful.
-        window.location.href = 'index.html';
+        // window.location.href = 'index.html';
+        history.go(-2)
       }).catch(function(error) {
         console.log(error)
         // An error happened.
