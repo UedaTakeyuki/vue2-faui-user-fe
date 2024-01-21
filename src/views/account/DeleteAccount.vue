@@ -39,15 +39,18 @@
 <script>
 //import firebase from "firebase/app";
 //import "firebase/auth";
-
+import NoGoingBack from './NoGoingBack.vue'
 export default {
   data: function () {
     return {
     }
   },
+  components: [NoGoingBack],
   props:{
     message: {
-      default: () => Vue.extend({template: '<v-card-text class="red--text">Once you delete this account, there is no going back. Please be certain.</v-card-text>'}),
+      /*global Vue*/
+      //      default: () => Vue.extend({template: '<v-card-text class="red--text">Once you delete this account, there is no going back. Please be certain.</v-card-text>'}),
+      default: () => NoGoingBack,
     }
   },
   methods: {
